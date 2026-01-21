@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Uso Airbnb CI/CD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Airbnb CI/CD</h1>
+
+        <p>
+            Airbnb es una plataforma que permite a los propietarios ofrecer servicios de alojamiento,
+            proporcionando viajes seguros y conectando a personas con experiencias de hospitalidad a nivel mundial.
+        </p>
+
+        <h2>¿Cómo está actualmente?</h2>
+        <p>
+            Airbnb utiliza varios servicios de AWS:
+            <br><strong>Base de datos:</strong> Amazon RDS.
+            <br><strong>Amazon EC2 y Elastic Load Balancing:</strong> gestionan las aplicaciones, el almacenamiento en caché
+            y distribuyen automáticamente el tráfico entrante, asegurando tiempos óptimos.
+            <br><strong>Amazon SQS:</strong> servicio de mensajería que sincroniza los repositorios.
+            <br><strong>Amazon EFS:</strong> sistema de archivos escalable que mantiene los espejos de GitHub sincronizados.
+        </p>
+
+        <h2>¿Por qué comenzó a usar CI/CD?</h2>
+        <p>
+            La inconsistencia en el manejo de datos, los problemas de tiempo de inactividad y las caídas frecuentes del
+            sitio, junto con el creciente tráfico de la plataforma, hicieron evidente la necesidad de escalar su
+            infraestructura.
+        </p>
+
+        <h2>¿Cómo se abordó el problema?</h2>
+        <p>
+            Airbnb migró su base de datos MySQL a AWS. Para manejar el tráfico de datos se utilizó Amazon EFS,
+            lo que eliminó problemas de inconsistencia y facilitó la gestión del pipeline CI/CD.
+            <br>Amazon SQS aseguró que no se perdieran cambios críticos durante los procesos de sincronización.
+        </p>
+    </main>
+
+    <section>
+        <h2>Etapas del proceso CI/CD</h2>
+        <ul>
+            <li>
+                <strong>Etapa 1:</strong> Actualización de instancias individuales de los desarrolladores dentro del CRM
+                desde el entorno de integración (SIT).
+                <br><em>Logros:</em>
+                <ul>
+                    <li>Facilita el desarrollo colaborativo.</li>
+                    <li>Permite pruebas unitarias en entornos individuales.</li>
+                    <li>Garantiza una integración fluida entre equipos.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Etapa 2:</strong> El código pasa por controles de calidad antes de llegar al entorno SIT,
+                incluyendo análisis estático para cumplir estándares y buenas prácticas.
+            </li>
+
+            <li>
+                <strong>Etapa 3:</strong> Entorno de pruebas donde se realizan pruebas de aceptación del usuario y
+                rendimiento. Se utiliza PTPaaS para pruebas de carga y rendimiento.
+            </li>
+        </ul>
+
+        <img src="/public/image.png" alt="arquitectura-CI/CD">
+        <h3>Flujo</h3>
+        <img src="/public/Captura.PNG" alt="">
+    </section>
+
+    <section>
+        <h2>Conclusiones</h2>
+        <p>
+            La implementación de DevOps permitió una mejora significativa en una infraestructura a gran escala,
+            optimizando la calidad del software, el flujo de trabajo de los desarrolladores y la experiencia del
+            usuario final.
+        </p>
+
+        <h2>Bibliografía</h2>
+        <ul>
+            <li>
+                Kumari, S. (2023). <em>Transforming CRM DevOps at Airbnb</em>. Medium.
+            </li>
+            <li>
+                Cómo Airbnb escaló su éxito con AWS. (2024). DEV Community.
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        Creado por Armando Estevez T.
+    </footer>
+</body>
+
+</html>
